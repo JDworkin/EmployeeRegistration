@@ -3,17 +3,18 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+// This class holds information about an employee and helps save and load data.
 public class Employee {
     private String firstName;
     private String lastName;
     private int age;
     private String department;
 
-    // Default constructor
+    // Default way to create an employee without specific details.
     public Employee() {
     }
 
-    // Constructor with parameters
+    // Create an employee with specific details.
     public Employee(String firstName, String lastName, int age, String department) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,7 +22,7 @@ public class Employee {
         this.department = department;
     }
 
-    // Getters and setters
+    // Methods to get and set information about an employee.
     public String getFirstName() {
         return firstName;
     }
@@ -54,7 +55,7 @@ public class Employee {
         this.department = department;
     }
 
-    // Save the employee to a CSV file
+    // Save employee details to a file in a simple format (CSV).
     public void saveToCSV(String fileName) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(fileName, true))) {
             writer.println(String.format("%s,%s,%d,%s", firstName, lastName, age, department));
@@ -63,7 +64,7 @@ public class Employee {
         }
     }
 
-    // Retrieve all employees from a CSV file
+    // Read all employees' details from the file and create a list of employees.
     public static List<Employee> retrieveAllFromCSV(String fileName) {
         List<Employee> employees = new ArrayList<>();
 
@@ -87,6 +88,7 @@ public class Employee {
         return employees;
     }
 
+    // Display employee information in a readable way.
     @Override
     public String toString() {
         return "Employee{" +
