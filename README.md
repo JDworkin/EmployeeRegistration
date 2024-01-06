@@ -16,7 +16,7 @@ Make sure you have Java installed on your machine.
 git clone https://github.com/JDworkin/EmployeeRegistration.git
 
 # Navigate to the project folder
-cd EmployeeRegistrationForm 
+cd EmployeeRegistration 
 
 # Run the Application
 javac *.java
