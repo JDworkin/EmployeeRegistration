@@ -2,10 +2,12 @@
 import java.util.List;
 import java.util.Scanner;
 
+// The main part of a simple employee registration program.
 public class EmployeeRegistrationApp {
     private static final String CSV_FILE_NAME = "employees.csv";
     private static Scanner scanner = new Scanner(System.in);
 
+    // The main method where the program starts.
     public static void main(String[] args) {
         while (true) {
             displayMenu();
@@ -14,18 +16,21 @@ public class EmployeeRegistrationApp {
         }
     }
 
+    // Show the options for the user to choose from.
     private static void displayMenu() {
         System.out.println("\nEmployee Registration System");
-        System.out.println("1. Register new employee");
-        System.out.println("2. View all employees");
-        System.out.println("3. Exit");
+        System.out.println("1. Register a new employee");
+        System.out.println("2. View all registered employees");
+        System.out.println("3. Exit the program");
         System.out.print("Enter your choice: ");
     }
 
+    // Get the user's choice from the console.
     private static int getUserChoice() {
         return scanner.nextInt();
     }
 
+    // Perform an action based on the user's choice.
     private static void performAction(int choice) {
         switch (choice) {
             case 1:
@@ -39,12 +44,13 @@ public class EmployeeRegistrationApp {
                 System.exit(0);
                 break;
             default:
-                System.out.println("Invalid choice. Please enter a valid option.");
+                System.out.println("Invalid choice. Please choose a valid option.");
         }
     }
 
+    // Register a new employee by taking information from the user.
     private static void registerEmployee() {
-        System.out.println("\nRegister New Employee");
+        System.out.println("\nRegister a New Employee");
 
         Employee employee = new Employee();
 
@@ -60,14 +66,15 @@ public class EmployeeRegistrationApp {
         System.out.print("Enter Department: ");
         employee.setDepartment(scanner.next());
 
-        // Save the employee to a CSV file
+        // Save the employee's details to a file.
         employee.saveToCSV(CSV_FILE_NAME);
 
         System.out.println("Employee registered successfully!");
     }
 
+    // Show details of all registered employees.
     private static void viewAllEmployees() {
-        System.out.println("\nAll Employees");
+        System.out.println("\nAll Registered Employees");
 
         List<Employee> employees = Employee.retrieveAllFromCSV(CSV_FILE_NAME);
 
