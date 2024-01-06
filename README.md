@@ -13,10 +13,10 @@ Make sure you have Java installed on your machine.
 ### Clone the Repository
 
 # bash
-git clone https://github.com/your-username/employee-registration-system.git
+git clone https://github.com/JDworkin/EmployeeRegistration.git
 
 # Navigate to the project folder
-cd employee-registration-system
+cd EmployeeRegistration
 
 # Run the Application
 javac *.java
